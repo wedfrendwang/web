@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>改变按钮的颜色div的宽高</title>
+	<meta charset="utf-8">
+
+
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			margin: 0px auto;
+		}
+	</style>
+</head>
+<body>
+
+<input id="btn" type="button" value="button" ></input><br/>
+<div id="div1"></div>
+
+<script type="text/javascript">
+	document.getElementById('btn').onclick=function(){
+		//让按钮的背景色变为黄色，修改按钮的属性
+
+		// 元素.style.样式=值；
+
+		/*document.getElementById('btn').style.background='red';*/
+
+		// 修改div的宽高
+
+		document.getElementById('div1').style.width='200px';
+
+		document.getElementById('div1').style.height='200px';
+	};
+
+</script>
+
+</body>
+</html>
+
+<!-- 
+1.点击按钮，让按钮的背景色变为黄色
+
+2.点击按钮，让div的高度和宽度进行变化
+
+
+
+ -->

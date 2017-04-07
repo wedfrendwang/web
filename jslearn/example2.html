@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>script position</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			margin: 0px auto;
+		}
+	</style>
+
+
+
+	<script type="text/javascript">
+	alert(document.getElementById('btn'));//null,获取到的对象为null，也就是说这个对象不存在
+	/*
+		原因：一般情况下，代码的执行顺序中永远都是从上到下的顺序执行，从左往右的顺序执行
+		返回null是因为
+		<input id="btn" type="button" value="button" ></input><br/>
+		代码还没有执行，找不到id为btn的标签---->所以返回为null
+
+		解决：window.onload  页面加载完成
+
+		window.onload=function(){
+			//当页面的元素全部加载完成才会执行
+		}
+
+		什么时候用：当js代码需要获取页面中的元素时，且script标签在元素的前面：需要 window.onload
+
+		放在后面的时候，则不需要。
+
+	*/
+	// document.getElementById('btn').onclick=function(){
+		
+
+	// 	document.getElementById('div1').style.width='200px';
+
+	// 	document.getElementById('div1').style.height='200px';
+	// };
+
+
+	window.onload=function (){
+		document.getElementById('btn').onclick=function (){
+		
+
+		document.getElementById('div1').style.width='200px';
+
+		document.getElementById('div1').style.height='200px';
+	};
+	}
+
+
+</script>
+
+</head>
+<body>
+<input id="btn" type="button" value="button" ></input><br/>
+<div id="div1"></div>
+
+
+</body>
+</html>

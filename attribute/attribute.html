@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>Attribute 属性的使用</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+<input type="button" id="btn" value="测试属性" style="width: 100px;height: 50px;background: yellow;border: none;font-size: 20px">
+<!-- 
+
+属性的操作方式
+
+属性操作符 .
+
+元素 .属性名
+
+带有-的属性
+
+元素 []
+
+ -->
+
+ <script type="text/javascript">
+ 	
+ 	var btn = document.getElementById('btn');
+
+ 	btn.onclick=function (){
+ 		//获取属性值
+ 		alert(btn.value+btn.type+btn.id);
+ 		//修改属性值
+ 		btn.value = 'change';
+ 		// console.log(btn.style.font-size);//报错
+
+ 		/*
+		原因：js中并不认识 - 这个标签
+
+		所以含有 -  例如：font-size 这个属性不可以使用 . 来进行获取
+
+ 		*/
+
+ 		console.log(btn.style['font-size']);
+
+ 		console.log(btn.style.fontSize);
+
+ 		/*真的想使用.来进行属性的获取，所以直接将-之后的第一个首字母进行大写*/
+
+		console.log(btn.style);
+
+
+ 	}
+
+ </script>
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>常见属性</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		a{
+			text-decoration:none; color:#009; outline:none;
+		}
+	</style>
+
+
+
+</head>
+<body>
+<!-- 这部分的内容实际上是HTML的内容了，相应的属性标签成千个，所以想记住很难？但是常用的必须了解 
+	
+
+	在获取class的属性的时候，不可以直接使用.class的方式
+
+	原因：因为class是保留字
+
+	js提供替换字符  className(记住了)
+
+	***********************************************************
+
+	说一个有意思的：
+
+	innerHTML
+
+	获取一个标签对立面的所有内容,如果 标签对中含有内嵌标签照样输出获取
+
+
+	设置innerHTML的属性：在给innerHTML设置值的时候，如果有HTML标签放置在网页当中会被解析成一个真正的html标签。
+
+
+	herf:链接地址
+	src:图片地址
+
+
+
+-->
+
+	<input type="button" name="button" id="btn" value="按钮">
+
+	<div id="box">
+		<p style="color: red">段落</p>
+		这是一个段落
+	</div>
+
+	<img id="img" src="../image/2.jpg" alt="一张美丽的风景图">
+
+	<br/><br/>
+
+	<a href="../index.html" id="link">进入首页</a>
+
+	<script type="text/javascript">
+		
+	var btn = document.getElementById('btn');
+
+	var box = document.getElementById('box');
+
+	var img = document.getElementById('img');
+
+	var link = document.getElementById('link');
+
+	console.log(img.src);
+
+	console.log(link.href);
+	// example.html:69  file:///F:/web/image/2.jpg
+	// example.html:71  file:///F:/web/index.html
+	// 所取到的值是绝对地址，切记不要根据这两个标签的值做判断
+	
+	btn.onclick=function (){
+
+		console.log(box.innerHTML);
+		box.innerHTML = '<span>wangxiaobo</span>';
+	}
+
+	</script>
+
+</body>
+</html>

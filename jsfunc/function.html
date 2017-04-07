@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>JS函数的使用</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<script type="text/javascript">
+	/*JS函数的使用
+
+	复用代码，多行的复用代码
+
+	1.什么是JS函数：
+
+		声明函数：
+		function [自己定义的函数名](){
+			
+			//这里面的代码是可以进行复用的代码，多行
+		}
+
+		函数调用：
+
+		函数名()
+	*/
+
+	function getByName(){
+		return 'wangxiaobo';
+	}
+
+	alert(getByName());
+
+
+	/*
+	匿名函数
+		没有变量名
+
+		function (){
+	
+		}
+
+		匿名函数怎么去用？
+
+		匿名函数被赋值并且被事件调用的时候才可以进行执行
+		匿名函数是不能声明的
+
+
+
+	*/
+
+	window.onload=function (){
+		alert('11111');
+	}
+
+</script>
+
+
+	<input id="btn" type="button" value="按钮"></input>
+	
+
+</body>
+</html>

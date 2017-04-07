@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>变量的学习</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	
+	/*
+	什么是变量：可变的量，可以理解为值。在java中，数据类型有很多，int,string,double,float,char,byte,long等等
+
+	变量的好处：可以重复利用，精简代码
+
+	声明变量：var [自己起的变量名]=[对其赋值]
+
+	变量声明的命名规则：1，可以是字母，下划线，数字的任意组合 美元符（但是数字不可以作为开头）
+
+	2：是不可以使用关键字。比如：goto，int,String等等，也就是说人家已经公用的字符
+
+	http://www.w3school.com.cn/js/pro_js_keywords.asp
+
+	3：保留字符
+
+
+	变量命名风格：
+
+	大驼峰、小驼峰、见名知意
+
+
+	*/
+
+	var kaivon = 12;
+
+	console.log(kaivon);
+
+
+</script>
+
+
+<input  id="btn" type="button" value="button"></input>
+<div id="div2"></div>
+<script type="text/javascript">
+	
+	var div2 = document.getElementById('div2');
+
+	document.getElementById('btn').onclick=function(){
+
+	div2.style.width='200px';
+	div2.style.height='200px';
+	div2.style.background='red';
+	div2.style.size='20px';
+
+}
+
+</script>
+
+</body>
+</html>
