@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>图片点击上下切换</title>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="">
+	<style type="text/css">
+		img{
+			width: 400px;
+			height: 400px;
+			border: 1px solid red;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+		
+	/*数组的使用，数组的结合使用，那么这个只是一个简单的实例
+
+	  语法：如何识别是否是一个数组  []
+
+	  每个数据之间是使用 ','分隔开来，并且最后一个数据是没有的
+
+	  每一个数据都会带有一个下标，方便取值与使用。
+
+	*/
+
+	var image = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1491800785684&di=f66e71fdfc478013563e30ec52b38ed5&imgtype=0&src=http%3A%2F%2Fimg02.tooopen.com%2Fimages%2F20160222%2Ftooopen_sy_156684872577.jpg'];
+
+	console.log(image.length);
+
+	console.dir(image);
+
+	</script>
+
+</head>
+<body>
+
+<h1 align="center">图片的切换按钮</h1>
+<br/>
+
+<button id="btnUP" value="Up" >上一张</button>
+<button id="btnDowm" value="Down">下一张</button>
+
+<br/><br/>
+
+<img id="image" src="../image/1.jpg" alt="一些美丽的星空图片">
+
+
+<script type="text/javascript">
+
+	var btnUP = document.getElementById('btnUP');
+	var btnDowm = document.getElementById('btnDowm');
+	var image = document.getElementById('image');
+	var index = 1;
+
+	//点击事件
+	btnUP.onclick=function (){
+		
+	if (index == 1) {
+			alert('这已经是第一张图片');
+		} else {
+			index -= 1;
+			image.src='../image/'+index+'.jpg';
+		}
+	}
+
+
+	btnDowm.onclick=function (){
+		if (index == 5) {
+			alert('这已经是最后一张图片');
+		} else {
+			index += 1;
+			image.src='../image/'+index+'.jpg';
+		}	
+	}
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>this初探</title>
+	<meta charset="utf-8">
+
+	
+</head>
+<body>
+
+<input id="btn" type="button" value="按钮"></input>
+
+
+
+<script type="text/javascript">
+		
+	/*this  很重要
+
+		指：当前对象；
+		this是一个关键词，不能当做变量名，只能读不能写
+
+		所以this的值只能使用，绝对不能修改
+
+
+		this分为两种情况：
+
+		1：在函数外部使用,指向的window
+
+		2: 在函数内部使用
+
+				fn()
+				1：函数是直接进行调用的指向windows
+
+				document.onclick=fn;
+				2: 点击页面，指向  document  原因：被事件调用，并且被赋值的形式
+				谁调用了函数，this便指向谁
+
+				3：var btn = document.querySelector('#btn');
+				   btn.onclick=fn;
+
+				   此时指向的是input
+
+				   谁调用的函数，this指向的便是谁。
+	*/
+
+
+	// alert(this==window);
+
+
+	function fn(){
+		//弹出来的都是window
+		alert(this);
+	}
+
+	// fn();
+
+
+	// document.onclick=fn;
+
+
+
+
+	var btn = document.querySelector('#btn');
+
+	btn.onclick=fn;
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>选择器的使用方式</title>
+	<meta charset="utf-8">
+
+
+	<style type="text/css">
+		
+		#color>li:first-child{
+			background: red;
+		}
+
+		#color>li:nth-child(4){
+			background: yellow;
+		}
+
+
+
+	</style>
+
+
+	<script type="text/javascript">
+		
+	/*选择器  css 的
+
+			querySelector('这里填写的是css的选择器')
+
+			通过css的选择器去获取一个元素，只获取一个元素，如果有重名的我们只获取第一个
+
+
+			主语：
+				document代表从整个文档获取元素
+
+				父级
+			querySelectorAll:获取到一组元素
+
+			主语：
+
+				document
+
+				父级
+	*/
+
+		window.onload = function(){
+
+			var red = document.querySelector('#color>li:first-child');
+			console.log(red);
+			red.style.background = 'pink';
+		}
+	
+
+
+	</script>
+
+
+</head>
+<body>
+
+<h1 align="center" style="color: red">selector</h1>
+
+	<ul>	
+		<li>wang</li>
+		<li>xiao</li>
+		<li>bo</li>
+		<li>wedfrend</li>
+		<li>iolo</li>
+	</ul>
+
+
+	<ul  id="color">	
+		<li>wang</li>
+		<li>xiao</li>
+		<li>bo</li>
+		<li>wedfrend</li>
+		<li>iolo</li>
+	</ul>
+
+
+</body>
+</html>

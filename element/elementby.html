@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>获取内容</title>
+	<meta charset="utf-8">
+
+
+	<script type="text/javascript">
+		/*获取元素方法     document:代表整个界面，限定获取范围
+
+		W3C规定：id只能有一个。不可以重复
+
+		.getElementById('')通过ID获取一个元素
+
+
+		getElementsByTagName('');//放标签名称
+
+
+		主语的问题：作用是限制范围。不同于ID
+
+
+		getElementsByClassName('');
+
+		同样也是主语的问题
+
+		这里可以使用document
+
+		可以使用父级，雷同
+
+
+		所以这里扩展一下：
+
+		在这3个获取的方法中，使用到的数据可以这样的去理解：
+
+		document是定位于整个界面，也就是当前界面下，当然对于ID而言无可厚非，因为W3C规定只能有一个且不能重复。
+
+		但是对于Name，Class这些可以重名的，便需要根据实际需求声明你的父级标签
+
+		在抗战时代也是雷同于  上级   吧！	
+		*/
+
+		window.onload = function (){
+			//类数组，只具备数组中的两个属性：
+			//1.length属性
+			//2.还有就是每个数据都有自己的一个对应的下标
+
+			var color = document.getElementById('color');
+
+			var li = color.getElementsByTagName('li');
+			//既然是一个集合，怎么获取其中的一个数据
+			console.dir(li);
+
+			li[0].style.background = 'red';
+		}
+
+		
+
+
+
+	</script>
+</head>
+<body>
+<!-- 无序列表 -->
+<ul>	
+<li>wang</li>
+<li>xiao</li>
+<li>bo</li>
+<li>wedfrend</li>
+<li>iolo</li>
+</ul>
+
+
+<ul  id="color">	
+<li>wang</li>
+<li>xiao</li>
+<li>bo</li>
+<li>wedfrend</li>
+<li>iolo</li>
+</ul>
+
+
+
+</body>
+</html>

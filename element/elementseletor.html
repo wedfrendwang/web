@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>html中的标签选择器</title>
+	<meta charset="utf-8">
+
+
+
+	<style type="text/css">
+
+		#div1 p{
+			color: green;
+		}
+		
+		/*p{
+			color: red;
+		}*/
+
+		/*后代选择器*/
+		#div1 div p{
+			color: green;
+		}
+
+		/*子类选择器*/
+		#div1>p{
+			color: yellow;
+		}
+
+		/*交集选择器*/
+		p.p3#div3{
+			background: red;
+			color: white;
+		}
+
+		/*并集选择器*/
+		p,div{
+			padding: 0px;
+			margin: 15px;
+		}
+
+		/*a伪类选择器*/
+		a:link{
+			
+			text-decoration:none;
+		}
+
+		a:visited{
+			color: green;
+		}
+
+		a:hover{
+			color: red;
+			background: white;
+		}
+
+		a:active{
+			background: gray;
+		}
+
+
+		/*结构选择器*/
+		.div4 p:first-of-type{
+			color: pink;
+		}
+
+
+
+		/*元素伪类选择器*/
+		.div5 p:first-line{
+			color: pink;
+		}
+
+		.div5 p:first-letter{
+			color: red;
+		}
+
+		.div5 p:before{
+			content: "wang";
+			color: green;
+		}
+
+		.div5 p:after{
+			content: "xiaobo";
+			color: green;
+		}
+
+		/*通用兄弟元素选择器*/
+		.div6~p{
+			background: green;
+		}
+
+		/*相邻元素选择器*/
+		.div6+p{
+			background: pink;
+		}
+
+
+	</style>
+
+</head>
+
+<!-- 
+
+		简单的标签选择器：
+
+		标签选择器
+
+		类选择器
+
+		id选择器
+
+
+		C3在之后的选择器中做了新增等等，看看怎么使用：
+
+
+		衍生出来的选择器：
+
+		后代选择器：  父类选择器 [space] 后代{
+	
+						属性值;
+					  }
+
+					  space  可以理解为后代，意思也就是所有的
+
+		子选择器：	  当父类之中嵌套这同样的标签，且标签中含有子标签，那么需要使用子选择器
+
+					  父类选择器>子选择器{
+	
+					  }
+
+					  说明一样：>符号你可以理解为亲生的一个概念
+
+
+
+		交集选择器：由两个选择器直接构成，结果为两个选择器的交集部分
+
+					 
+
+					 语法：
+
+					 E.class{}
+					 E#id{}
+					 E[属性]{}
+
+					 前提：E必须是标签选择器
+
+		并集选择器：对多个选择器同时进行设置
+
+					p,div{
+						padding:0px;
+					}
+
+		通配符选择器： *{}
+
+		超链接的伪类选择器：
+
+					LVHA
+
+					a:link  	设置超链接的默认效果
+					a:visited 	设置超链接访问后的效果
+					a:hover     设置超链接鼠标移动过的效果
+					a:active    设置超链接被激活过的效果
+
+		属性选择器：[属性名称]{
+						color: red;
+					}
+
+		伪类选择器：enabled
+					disabled
+
+
+		结构选择器：C3的新增属性
+
+					选取一个结构中的元素,选取父元素下同元素的标签
+
+					E:first-of-type
+					E:last-of-type
+					E:nth-of-type(n)
+					E:last-nth-of-type(n)
+
+
+		元素伪类选择器：C3新增属性
+
+					用于向某些元素设置特殊效果
+
+					E:first-line  第一行  使用于块级元素
+					E:first-letter 第一个字母
+					E:before 之前  一般情况下和  content 配合使用
+					E:after 之后
+
+
+		通用兄弟元素选择器：E~F
+					
+					E之后的兄弟选择器全部通配
+
+		相邻元素选择器：E+F
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
+
+<body>
+
+<p>标签1</p>
+
+<p>标签2</p>
+
+<p>标签3</p>
+
+
+<!-- 后代选择器 -->
+
+<div id="div1" >
+	
+	<p>我是div的后代</p>
+
+
+	<div id="div2" style="width: 100px;height: 100px;background: red;border: 1px solid yellow"> 
+		<p>看看子选择器</p>
+	</div>
+
+</div>
+
+
+<div class="div3">
+	<p class="p3">交集选择器</p>
+</div>
+
+<p class="p3" id="div3">交集选择器</p>
+
+<a href="https://www.baidu.com"  >点击进入百度</a>
+
+<form action="../index.html" method="post">
+	
+	<input id="name" type="text" value="" placeholder="请输入用户名" enabled="enabled"></input>
+	<br/>
+	<input id="pas" type="password" value="" placeholder="请输入密码" disabled="disabled"></input>
+
+	<input name="pass" type="hidden" value="a" ></input>
+
+	<input  type="submit" value="submit" ></input>
+
+</form>
+
+<br/><br/>
+
+<div class="div4">
+	
+	<p>元素1</p>
+	<p>元素2</p>
+	<p>元素3</p>
+	<p>元素4</p>
+	<p>元素5</p>
+
+
+</div>
+
+<br/>
+
+<div class="div5">
+<p>直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦直如弦</p>
+<p>死道边<br/></p>
+<p>曲如钩<br/></p>
+<p>反封侯<br/></p>
+
+<div class="div6"></div>
+<p>兄弟</p>
+<p>兄弟</p>
+<p>兄弟</p>
+<p>兄弟</p>
+<p>兄弟</p>
+
+
+</div>
+
+</body>
+</html>
